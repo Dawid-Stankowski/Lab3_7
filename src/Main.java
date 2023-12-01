@@ -1,17 +1,28 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
+
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int[] Tablica = {1, 2, 3, 4, 5};
+        System.out.println("Oryginalna tablica:");
+        wypiszTablice(Tablica);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        odwrocTablice(Tablica);
+        System.out.println("Odwrocona tablica:");
+        wypiszTablice(Tablica);
+    }
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+    public static void odwrocTablice(int[] tablica) {
+        int dlugosc = tablica.length;
+        for (int i = 0; i < dlugosc / 2; i++) {
+            int temp = tablica[i];
+            tablica[i] = tablica[dlugosc - 1 - i];
+            tablica[dlugosc - 1 - i] = temp;
         }
+    }
+
+    public static void wypiszTablice(int[] tablica) {
+        for (int element : tablica) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
     }
 }
